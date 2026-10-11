@@ -1,3 +1,5 @@
+"use client";
+
 import Greeting from "../../components/Greeting";
 import MetricCard from "../../components/MetricCard";
 import ProfitLeakChart from "../../components/ProfitLeakChart";
