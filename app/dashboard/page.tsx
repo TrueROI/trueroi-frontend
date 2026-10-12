@@ -1,11 +1,11 @@
 "use client";
 
-import Greeting from "../../components/Greeting";
-import MetricCard from "../../components/MetricCard";
+import Greeting from "@/components/Greeting";
+import MetricCard from "@/components/MetricCard";
 import dynamic from "next/dynamic";
 
 const ProfitLeakChart = dynamic(
-  () => import("../../components/ProfitLeakChart"),
+  () => import("@/components/ProfitLeakChart"),
   { ssr: false }
 );
 
