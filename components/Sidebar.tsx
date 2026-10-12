@@ -1,3 +1,5 @@
+"use client";
+
 import { Home, BarChart2, ClipboardList, CreditCard, Settings } from "lucide-react";
 
 export default function Sidebar() {
