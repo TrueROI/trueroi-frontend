@@ -2,7 +2,12 @@
 
 import Greeting from "../../components/Greeting";
 import MetricCard from "../../components/MetricCard";
-import ProfitLeakChart from "../../components/ProfitLeakChart";
+import dynamic from "next/dynamic";
+
+const ProfitLeakChart = dynamic(
+  () => import("../../components/ProfitLeakChart"),
+  { ssr: false }
+);
 
 const chartData = [
   { date: "Oct 1", profit: 3200, leaks: 400 },
