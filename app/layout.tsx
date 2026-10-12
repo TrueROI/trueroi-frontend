@@ -1,20 +1,15 @@
 "use client";
 
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-import Sidebar from "../components/Sidebar";
+import Sidebar from "@/components/Sidebar";
 import { GlobalSpinner } from "@/components/GlobalSpinner";
 import { ErrorBanner } from "@/components/ErrorBanner";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
@@ -23,26 +18,15 @@ export const metadata: Metadata = {
   description: "Profit Guard Dashboard",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const isLoading = false;      // later: wire to router or global state
-  const globalError = "";       // later: wire to global error state
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const isLoading = false;
+  const globalError = "";
 
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
+    <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex bg-white">
         {isLoading && <GlobalSpinner />}
-
-        {/* Sidebar */}
         <Sidebar />
-
-        {/* Main dashboard content */}
         <main className="flex-1 p-8 overflow-y-auto">
           <ErrorBanner message={globalError} />
           {children}
