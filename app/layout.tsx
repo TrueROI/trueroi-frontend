@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-import LayoutClientWrapper from "@/components/LayoutClientWrapper";
+import LayoutClientWrapper from "../components/LayoutClientWrapper";
 
 const inter = Inter({
   variable: "--font-inter",

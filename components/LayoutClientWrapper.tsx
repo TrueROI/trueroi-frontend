@@ -1,8 +1,8 @@
 "use client";
 
-import Sidebar from "@/components/Sidebar";
-import { GlobalSpinner } from "@/components/GlobalSpinner";
-import { ErrorBanner } from "@/components/ErrorBanner";
+import Sidebar from "../components/Sidebar";
+import { GlobalSpinner } from "../components/GlobalSpinner";
+import { ErrorBanner } from "../components/ErrorBanner";
 
 export default function LayoutClientWrapper({ children }: { children: React.ReactNode }) {
   const isLoading = false;

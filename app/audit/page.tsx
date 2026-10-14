@@ -1,6 +1,6 @@
-import { SyncBanner } from "@/components/SyncBanner";
-import MetricCard from "@/components/MetricCard";
-import { MetricCardSkeleton } from "@/components/MetricCardSkeleton";
+import { SyncBanner } from "../../components/SyncBanner";
+import MetricCard from "../../components/MetricCard";
+import { MetricCardSkeleton } from "../../components/MetricCardSkeleton";
 
 async function getDashboard() {
   const res = await fetch("http://localhost:3000/api/dashboard", {
