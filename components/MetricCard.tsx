@@ -1,3 +1,5 @@
+"use client";
+
 import { ArrowUp, ArrowDown } from "lucide-react";
 
 export default function MetricCard({
