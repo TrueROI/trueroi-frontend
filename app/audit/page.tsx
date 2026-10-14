@@ -1,3 +1,5 @@
+"use client";
+
 import { SyncBanner } from "../../components/SyncBanner";
 import MetricCard from "../../components/MetricCard";
 import { MetricCardSkeleton } from "../../components/MetricCardSkeleton";
