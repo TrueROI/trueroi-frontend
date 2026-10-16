@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Noto_Serif } from "next/font/google";
 import "./globals.css";
 
 import LayoutClientWrapper from "../components/LayoutClientWrapper";
@@ -7,6 +7,12 @@ import LayoutClientWrapper from "../components/LayoutClientWrapper";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+});
+
+const notoSerif = Noto_Serif({
+  variable: "--font-noto-serif",
+  subsets: ["latin"],
+  weight: ["400", "600"], // includes SemiBold
 });
 
 export const metadata: Metadata = {
@@ -20,7 +26,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${notoSerif.variable} h-full antialiased`}
+    >
       <body className="min-h-full bg-white">
         <LayoutClientWrapper>{children}</LayoutClientWrapper>
       </body>
