@@ -14,10 +14,14 @@ export const metadata: Metadata = {
   description: "Profit Guard Dashboard",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
-      <body className="min-h-full flex bg-white">
+      <body className="min-h-full bg-white">
         <LayoutClientWrapper>{children}</LayoutClientWrapper>
       </body>
     </html>

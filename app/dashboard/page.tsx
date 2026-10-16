@@ -2,13 +2,16 @@
 
 import Greeting from "../../components/Greeting";
 import MetricCard from "../../components/MetricCard";
+import ChartCard from "../../components/ChartCard";
 import dynamic from "next/dynamic";
 
+// Load chart client-side only
 const ProfitLeakChart = dynamic(
   () => import("../../components/ProfitLeakChart"),
   { ssr: false }
 );
 
+// Example chart data
 const chartData = [
   { date: "Oct 1", profit: 3200, leaks: 400 },
   { date: "Oct 2", profit: 3500, leaks: 380 },
@@ -21,7 +24,16 @@ const chartData = [
 
 export default function DashboardPage() {
   return (
-    <>
+    <div className="space-y-10">
+      {/* Header */}
+      <div className="text-center">
+        <h1 className="text-4xl font-bold text-[#000000]">TrueROI Dashboard</h1>
+        <p className="text-[#828282] mt-2">
+          This will become your real-time profit leak view.
+        </p>
+      </div>
+
+      {/* Greeting */}
       <Greeting
         merchantName="Kane"
         shopName="TrueROI Profit Guard"
@@ -29,6 +41,7 @@ export default function DashboardPage() {
         status="synced"
       />
 
+      {/* Metric Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <MetricCard title="Revenue" value="$45,678" trend="up" />
         <MetricCard title="Fees" value="$6,540" trend="down" />
@@ -37,7 +50,10 @@ export default function DashboardPage() {
         <MetricCard title="Profit Margin" value="32%" trend="up" />
       </div>
 
-      <ProfitLeakChart data={chartData} />
-    </>
+      {/* Chart */}
+      <ChartCard>
+        <ProfitLeakChart data={chartData} />
+      </ChartCard>
+    </div>
   );
 }
