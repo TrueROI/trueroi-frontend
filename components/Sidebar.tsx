@@ -1,18 +1,18 @@
 "use client";
 
-import { Home, BarChart2, ClipboardList, CreditCard, Settings } from "lucide-react";
+import { BarChart2, ClipboardList, CreditCard, Settings } from "lucide-react";
 
 export default function Sidebar() {
   return (
-    <aside className="h-screen w-64 bg-gray-100 border-r flex flex-col justify-between">
+    <aside className="h-screen w-64 bg-[#F7F7F7] border-r border-[#E3E5EC] flex flex-col justify-between p-6">
       {/* Logo */}
       <div>
-        <div className="p-6 font-bold text-xl text-blue-600">
+        <div className="font-bold text-xl text-[#515569] mb-6">
           TrueROI
         </div>
 
         {/* Navigation */}
-        <nav className="px-4 space-y-2">
+        <nav className="space-y-2">
           <SidebarLink
             label="Dashboard"
             icon={<BarChart2 size={18} />}
@@ -30,7 +30,7 @@ export default function Sidebar() {
       </div>
 
       {/* Bottom Section */}
-      <div className="px-4 pb-6">
+      <div className="space-y-2">
         <SidebarLink
           label="Settings"
           icon={<Settings size={18} />}
@@ -43,19 +43,18 @@ export default function Sidebar() {
 function SidebarLink({
   label,
   icon,
-  active = false
+  active = false,
 }: {
   label: string;
   icon: React.ReactNode;
   active?: boolean;
 }) {
-
   return (
     <div
-      className={`flex items-center gap-3 px-3 py-2 rounded-md cursor-pointer transition-colors ${
+      className={`flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer transition-colors ${
         active
-          ? "bg-blue-600 text-white"
-          : "text-gray-700 hover:bg-gray-200"
+          ? "bg-[#E2E5EE] text-[#000000]"
+          : "text-[#515569] hover:bg-[#E3E5EC]"
       }`}
     >
       {icon}
