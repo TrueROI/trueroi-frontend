@@ -1,36 +1,36 @@
 "use client";
 
 import { BarChart2, ClipboardList, CreditCard, Settings } from "lucide-react";
+import Logo from "./Logo";
 
 export default function Sidebar() {
   return (
     <aside className="h-screen w-64 bg-[#F7F7F7] border-r border-[#E3E5EC] flex flex-col justify-between p-6">
+      
       {/* Logo */}
-      <div>
-        <div className="font-bold text-xl text-[#515569] mb-6">
-          TrueROI
-        </div>
-
-        {/* Navigation */}
-        <nav className="space-y-2">
-          <SidebarLink
-            label="Dashboard"
-            icon={<BarChart2 size={18} />}
-            active
-          />
-          <SidebarLink
-            label="Orders"
-            icon={<ClipboardList size={18} />}
-          />
-          <SidebarLink
-            label="Billing"
-            icon={<CreditCard size={18} />}
-          />
-        </nav>
+      <div className="mb-6">
+        <Logo />
       </div>
 
+      {/* Navigation */}
+      <nav className="space-y-2">
+        <SidebarLink
+          label="Dashboard"
+          icon={<BarChart2 size={18} />}
+          active
+        />
+        <SidebarLink
+          label="Orders"
+          icon={<ClipboardList size={18} />}
+        />
+        <SidebarLink
+          label="Billing"
+          icon={<CreditCard size={18} />}
+        />
+      </nav>
+
       {/* Bottom Section */}
-      <div className="space-y-2">
+      <div className="space-y-2 mt-auto">
         <SidebarLink
           label="Settings"
           icon={<Settings size={18} />}
