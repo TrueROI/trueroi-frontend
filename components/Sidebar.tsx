@@ -11,7 +11,7 @@ export default function Sidebar() {
         <span
           className="text-[20px] font-semibold text-[#000000]"
           style={{
-            fontFamily: "Noto Serif, serif",
+            fontFamily: "var(--font-noto-serif)",
             lineHeight: "150%",
             letterSpacing: "-0.01em",
           }}
@@ -64,6 +64,12 @@ function SidebarLink({
           ? "bg-[#E2E5EE] text-[#000000]"
           : "text-[#515569] hover:bg-[#E3E5EC]"
       }`}
+      style={{
+        fontFamily: "var(--font-noto-serif)",
+        fontWeight: 600,
+        letterSpacing: "-0.01em",
+        lineHeight: "150%",
+      }}
     >
       {icon}
       <span className="font-medium">{label}</span>
