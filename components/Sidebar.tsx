@@ -16,7 +16,7 @@ export default function Sidebar() {
             letterSpacing: "-0.01em",
           }}
         >
-          TrueROI
+          TrueROI Profit Guard
         </span>
       </div>
 
