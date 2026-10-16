@@ -1,15 +1,16 @@
 "use client";
 
 import { BarChart2, ClipboardList, CreditCard, Settings } from "lucide-react";
-import Logo from "./Logo";
 
 export default function Sidebar() {
   return (
     <aside className="h-screen w-64 bg-[#F7F7F7] border-r border-[#E3E5EC] flex flex-col justify-between p-6">
       
       {/* Logo */}
-      <div className="mb-6">
-        <Logo />
+      <div className="mb-8">
+        <span className="font-bold text-2xl text-[#000000] tracking-tight">
+          TrueROI
+        </span>
       </div>
 
       {/* Navigation */}
