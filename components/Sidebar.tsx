@@ -8,7 +8,14 @@ export default function Sidebar() {
       
       {/* Logo */}
       <div className="mb-8">
-        <span className="font-bold text-2xl text-[#000000] tracking-tight">
+        <span
+          className="text-[20px] font-semibold text-[#000000]"
+          style={{
+            fontFamily: "Noto Serif, serif",
+            lineHeight: "150%",
+            letterSpacing: "-0.01em",
+          }}
+        >
           TrueROI
         </span>
       </div>
