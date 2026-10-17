@@ -6,6 +6,7 @@ export default function Sidebar() {
   return (
     <aside
       className="
+        group
         h-screen 
         bg-[#F7F7F7] 
         border-r border-[#E3E5EC] 
@@ -22,6 +23,7 @@ export default function Sidebar() {
       <div className="mb-8">
         <span
           className="
+            block
             text-[20px] 
             font-semibold 
             text-[#000000] 
@@ -29,7 +31,7 @@ export default function Sidebar() {
             opacity-0 
             transition-opacity 
             duration-300 
-            hover:opacity-100
+            group-hover:opacity-100
           "
           style={{
             fontFamily: "var(--font-noto-serif)",
@@ -37,7 +39,7 @@ export default function Sidebar() {
             letterSpacing: "-0.01em",
           }}
         >
-          TrueROI
+          TrueROI Profit Guard
         </span>
       </div>
 
@@ -81,6 +83,7 @@ function SidebarLink({
   return (
     <div
       className={`
+        group
         flex items-center gap-3 
         px-3 py-2 
         rounded-lg 
@@ -98,7 +101,7 @@ function SidebarLink({
     >
       {icon}
 
-      {/* Text fades in only when expanded */}
+      {/* Text appears only when sidebar is expanded */}
       <span
         className="
           whitespace-nowrap 
