@@ -83,8 +83,7 @@ function SidebarLink({
   return (
     <div
       className={`
-        group
-        flex items-center gap-3 
+        flex items-center 
         px-3 py-2 
         rounded-lg 
         cursor-pointer 
@@ -99,9 +98,12 @@ function SidebarLink({
         lineHeight: "150%",
       }}
     >
-      {icon}
+      {/* ICON ALWAYS VISIBLE */}
+      <div className="min-w-[24px] flex justify-center">
+        {icon}
+      </div>
 
-      {/* Text appears only when sidebar is expanded */}
+      {/* TEXT ONLY SHOWS WHEN EXPANDED */}
       <span
         className="
           whitespace-nowrap 
