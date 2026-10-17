@@ -1,8 +1,6 @@
 "use client";
 
 import Greeting from "../../components/Greeting";
-import MetricCard from "../../components/MetricCard";
-import ChartCard from "../../components/ChartCard";
 import dynamic from "next/dynamic";
 
 // Load chart client-side only
@@ -25,9 +23,19 @@ const chartData = [
 export default function DashboardPage() {
   return (
     <div className="space-y-10">
+
       {/* Header */}
       <div className="text-center">
-        <h1 className="text-4xl font-bold text-[#000000]">TrueROI Dashboard</h1>
+        <h1
+          className="text-[28px] font-semibold text-[#000000]"
+          style={{
+            fontFamily: "var(--font-noto-serif)",
+            letterSpacing: "-0.01em",
+            lineHeight: "150%",
+          }}
+        >
+          TrueROI Dashboard
+        </h1>
         <p className="text-[#828282] mt-2">
           This will become your real-time profit leak view.
         </p>
@@ -41,19 +49,91 @@ export default function DashboardPage() {
         status="synced"
       />
 
-      {/* Metric Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <MetricCard title="Revenue" value="$45,678" trend="up" />
-        <MetricCard title="Fees" value="$6,540" trend="down" />
-        <MetricCard title="Shipping" value="$3,210" trend="down" />
-        <MetricCard title="Net Profit" value="$35,928" trend="up" />
-        <MetricCard title="Profit Margin" value="32%" trend="up" />
+      {/* KPI Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        {/* Net Profit */}
+        <div className="bg-white border border-[#E3E5EC] rounded-xl p-6">
+          <h3
+            className="text-[20px] font-semibold text-[#000000]"
+            style={{
+              fontFamily: "var(--font-noto-serif)",
+              letterSpacing: "-0.01em",
+              lineHeight: "150%",
+            }}
+          >
+            Net Profit
+          </h3>
+          <p
+            className="text-[28px] font-semibold mt-2 text-[#000000]"
+            style={{ fontFamily: "var(--font-noto-serif)" }}
+          >
+            $45,678.90
+          </p>
+          <p className="text-[#515569] mt-1 text-sm">+20% vs yesterday</p>
+        </div>
+
+        {/* Total Leaks */}
+        <div className="bg-white border border-[#E3E5EC] rounded-xl p-6">
+          <h3
+            className="text-[20px] font-semibold text-[#000000]"
+            style={{
+              fontFamily: "var(--font-noto-serif)",
+              letterSpacing: "-0.01em",
+              lineHeight: "150%",
+            }}
+          >
+            Total Leaks Detected
+          </h3>
+          <p
+            className="text-[28px] font-semibold mt-2 text-[#000000]"
+            style={{ fontFamily: "var(--font-noto-serif)" }}
+          >
+            2,405
+          </p>
+          <p className="text-[#515569] mt-1 text-sm">+5 new issues</p>
+        </div>
+
+        {/* Money Lost */}
+        <div className="bg-white border border-[#E3E5EC] rounded-xl p-6">
+          <h3
+            className="text-[20px] font-semibold text-[#000000]"
+            style={{
+              fontFamily: "var(--font-noto-serif)",
+              letterSpacing: "-0.01em",
+              lineHeight: "150%",
+            }}
+          >
+            Money Lost to Leaks
+          </h3>
+          <p
+            className="text-[28px] font-semibold mt-2 text-[#000000]"
+            style={{ fontFamily: "var(--font-noto-serif)" }}
+          >
+            $10,353
+          </p>
+          <p className="text-[#515569] mt-1 text-sm">vs yesterday</p>
+        </div>
       </div>
 
-      {/* Chart */}
-      <ChartCard>
-        <ProfitLeakChart data={chartData} />
-      </ChartCard>
+      {/* Chart Section */}
+      <div className="bg-white border border-[#E3E5EC] rounded-xl p-6">
+        <h3
+          className="text-[20px] font-semibold text-[#000000] mb-4"
+          style={{
+            fontFamily: "var(--font-noto-serif)",
+            letterSpacing: "-0.01em",
+            lineHeight: "150%",
+          }}
+        >
+          Profit vs Leaks Over Time
+        </h3>
+
+        <div className="h-64">
+          <ProfitLeakChart data={chartData} />
+        </div>
+      </div>
+
     </div>
   );
 }
