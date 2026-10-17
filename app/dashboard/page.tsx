@@ -52,7 +52,6 @@ export default function DashboardPage() {
       {/* KPI Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-        {/* Net Profit */}
         <div className="bg-white border border-[#E3E5EC] rounded-xl p-6">
           <h3
             className="text-[20px] font-semibold text-[#000000]"
@@ -73,7 +72,6 @@ export default function DashboardPage() {
           <p className="text-[#515569] mt-1 text-sm">+20% vs yesterday</p>
         </div>
 
-        {/* Total Leaks */}
         <div className="bg-white border border-[#E3E5EC] rounded-xl p-6">
           <h3
             className="text-[20px] font-semibold text-[#000000]"
@@ -94,7 +92,6 @@ export default function DashboardPage() {
           <p className="text-[#515569] mt-1 text-sm">+5 new issues</p>
         </div>
 
-        {/* Money Lost */}
         <div className="bg-white border border-[#E3E5EC] rounded-xl p-6">
           <h3
             className="text-[20px] font-semibold text-[#000000]"
