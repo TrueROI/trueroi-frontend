@@ -50,8 +50,9 @@ export default function DashboardPage() {
       />
 
       {/* KPI Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
+        {/* Net Profit */}
         <div className="bg-white border border-[#E3E5EC] rounded-xl p-6">
           <h3
             className="text-[20px] font-semibold text-[#000000]"
@@ -72,6 +73,7 @@ export default function DashboardPage() {
           <p className="text-[#515569] mt-1 text-sm">+20% vs yesterday</p>
         </div>
 
+        {/* Total Leaks Detected */}
         <div className="bg-white border border-[#E3E5EC] rounded-xl p-6">
           <h3
             className="text-[20px] font-semibold text-[#000000]"
@@ -92,6 +94,7 @@ export default function DashboardPage() {
           <p className="text-[#515569] mt-1 text-sm">+5 new issues</p>
         </div>
 
+        {/* Money Lost to Leaks */}
         <div className="bg-white border border-[#E3E5EC] rounded-xl p-6">
           <h3
             className="text-[20px] font-semibold text-[#000000]"
@@ -108,6 +111,27 @@ export default function DashboardPage() {
             style={{ fontFamily: "var(--font-noto-serif)" }}
           >
             $10,353
+          </p>
+          <p className="text-[#515569] mt-1 text-sm">vs yesterday</p>
+        </div>
+
+        {/* Profit Margin */}
+        <div className="bg-white border border-[#E3E5EC] rounded-xl p-6">
+          <h3
+            className="text-[20px] font-semibold text-[#000000]"
+            style={{
+              fontFamily: "var(--font-noto-serif)",
+              letterSpacing: "-0.01em",
+              lineHeight: "150%",
+            }}
+          >
+            Profit Margin
+          </h3>
+          <p
+            className="text-[28px] font-semibold mt-2 text-[#000000]"
+            style={{ fontFamily: "var(--font-noto-serif)" }}
+          >
+            32%
           </p>
           <p className="text-[#515569] mt-1 text-sm">vs yesterday</p>
         </div>
