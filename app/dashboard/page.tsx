@@ -24,24 +24,7 @@ export default function DashboardPage() {
   return (
     <div className="space-y-10">
 
-      {/* Header */}
-      <div className="text-center">
-        <h1
-          className="text-[28px] font-semibold text-[#000000]"
-          style={{
-            fontFamily: "var(--font-noto-serif)",
-            letterSpacing: "-0.01em",
-            lineHeight: "150%",
-          }}
-        >
-          TrueROI Dashboard
-        </h1>
-        <p className="text-[#828282] mt-2">
-          This will become your real-time profit leak view.
-        </p>
-      </div>
-
-      {/* Greeting */}
+      {/* Greeting replaces old header */}
       <Greeting
         merchantName="Kane"
         shopName="TrueROI Profit Guard"
@@ -158,4 +141,3 @@ export default function DashboardPage() {
     </div>
   );
 }
-
