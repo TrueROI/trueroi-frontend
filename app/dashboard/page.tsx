@@ -22,21 +22,23 @@ const chartData = [
 
 export default function DashboardPage() {
   return (
-    <div className="space-y-10">
+    <div className="space-y-14"> {/* Increased spacing between sections */}
 
-      {/* Greeting replaces old header */}
-      <Greeting
-        merchantName="Kane"
-        shopName="TrueROI Profit Guard"
-        lastSync="Oct 7, 2026 — 4:55 PM"
-        status="synced"
-      />
+      {/* Centered Greeting */}
+      <div className="text-center">
+        <Greeting
+          merchantName="Kane"
+          shopName="TrueROI Profit Guard"
+          lastSync="Oct 7, 2026 — 4:55 PM"
+          status="synced"
+        />
+      </div>
 
       {/* KPI Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"> {/* More spacing */}
+        
         {/* Net Profit */}
-        <div className="bg-white border border-[#E3E5EC] rounded-xl p-6">
+        <div className="bg-white border border-[#E3E5EC] rounded-xl p-8"> {/* More padding */}
           <h3
             className="text-[20px] font-semibold text-[#000000]"
             style={{
@@ -48,7 +50,7 @@ export default function DashboardPage() {
             Net Profit
           </h3>
           <p
-            className="text-[28px] font-semibold mt-2 text-[#000000]"
+            className="text-[32px] font-semibold mt-3 text-[#000000]"
             style={{ fontFamily: "var(--font-noto-serif)" }}
           >
             $45,678.90
@@ -57,7 +59,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Total Leaks Detected */}
-        <div className="bg-white border border-[#E3E5EC] rounded-xl p-6">
+        <div className="bg-white border border-[#E3E5EC] rounded-xl p-8">
           <h3
             className="text-[20px] font-semibold text-[#000000]"
             style={{
@@ -69,7 +71,7 @@ export default function DashboardPage() {
             Total Leaks Detected
           </h3>
           <p
-            className="text-[28px] font-semibold mt-2 text-[#000000]"
+            className="text-[32px] font-semibold mt-3 text-[#000000]"
             style={{ fontFamily: "var(--font-noto-serif)" }}
           >
             2,405
@@ -78,7 +80,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Money Lost to Leaks */}
-        <div className="bg-white border border-[#E3E5EC] rounded-xl p-6">
+        <div className="bg-white border border-[#E3E5EC] rounded-xl p-8">
           <h3
             className="text-[20px] font-semibold text-[#000000]"
             style={{
@@ -90,7 +92,7 @@ export default function DashboardPage() {
             Money Lost to Leaks
           </h3>
           <p
-            className="text-[28px] font-semibold mt-2 text-[#000000]"
+            className="text-[32px] font-semibold mt-3 text-[#000000]"
             style={{ fontFamily: "var(--font-noto-serif)" }}
           >
             $10,353
@@ -99,7 +101,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Profit Margin */}
-        <div className="bg-white border border-[#E3E5EC] rounded-xl p-6">
+        <div className="bg-white border border-[#E3E5EC] rounded-xl p-8">
           <h3
             className="text-[20px] font-semibold text-[#000000]"
             style={{
@@ -111,7 +113,7 @@ export default function DashboardPage() {
             Profit Margin
           </h3>
           <p
-            className="text-[28px] font-semibold mt-2 text-[#000000]"
+            className="text-[32px] font-semibold mt-3 text-[#000000]"
             style={{ fontFamily: "var(--font-noto-serif)" }}
           >
             32%
@@ -121,9 +123,9 @@ export default function DashboardPage() {
       </div>
 
       {/* Chart Section */}
-      <div className="bg-white border border-[#E3E5EC] rounded-xl p-6">
+      <div className="bg-white border border-[#E3E5EC] rounded-xl p-8">
         <h3
-          className="text-[20px] font-semibold text-[#000000] mb-4"
+          className="text-[20px] font-semibold text-[#000000] mb-6"
           style={{
             fontFamily: "var(--font-noto-serif)",
             letterSpacing: "-0.01em",
@@ -133,7 +135,7 @@ export default function DashboardPage() {
           Profit vs Leaks Over Time
         </h3>
 
-        <div className="h-64">
+        <div className="h-72"> {/* Slightly taller chart */}
           <ProfitLeakChart data={chartData} />
         </div>
       </div>
