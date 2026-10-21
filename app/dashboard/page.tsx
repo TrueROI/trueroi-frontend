@@ -22,7 +22,7 @@ const chartData = [
 
 export default function DashboardPage() {
   return (
-    <div className="space-y-14">
+    <div className="space-y-10"> {/* tightened spacing */}
 
       {/* Centered Greeting */}
       <div className="text-center">
@@ -35,7 +35,91 @@ export default function DashboardPage() {
 
       {/* KPI Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {/* ... unchanged KPI cards ... */}
+
+        {/* Net Profit */}
+        <div className="bg-white border border-[#E3E5EC] rounded-xl p-6">
+          <h3
+            className="text-[20px] font-semibold text-[#000000]"
+            style={{
+              fontFamily: "var(--font-noto-serif)",
+              letterSpacing: "-0.01em",
+              lineHeight: "150%",
+            }}
+          >
+            Net Profit
+          </h3>
+          <p
+            className="text-[28px] font-semibold mt-2 text-[#000000]"
+            style={{ fontFamily: "var(--font-noto-serif)" }}
+          >
+            $45,678.90
+          </p>
+          <p className="text-[#515569] mt-1 text-sm">+20% vs yesterday</p>
+        </div>
+
+        {/* Total Leaks Detected */}
+        <div className="bg-white border border-[#E3E5EC] rounded-xl p-6">
+          <h3
+            className="text-[20px] font-semibold text-[#000000]"
+            style={{
+              fontFamily: "var(--font-noto-serif)",
+              letterSpacing: "-0.01em",
+              lineHeight: "150%",
+            }}
+          >
+            Total Leaks Detected
+          </h3>
+          <p
+            className="text-[28px] font-semibold mt-2 text-[#000000]"
+            style={{ fontFamily: "var(--font-noto-serif)" }}
+          >
+            2,405
+          </p>
+          <p className="text-[#515569] mt-1 text-sm">+5 new issues</p>
+        </div>
+
+        {/* Money Lost to Leaks */}
+        <div className="bg-white border border-[#E3E5EC] rounded-xl p-6">
+          <h3
+            className="text-[20px] font-semibold text-[#000000]"
+            style={{
+              fontFamily: "var(--font-noto-serif)",
+              letterSpacing: "-0.01em",
+              lineHeight: "150%",
+            }}
+          >
+            Money Lost to Leaks
+          </h3>
+          <p
+            className="text-[28px] font-semibold mt-2 text-[#000000]"
+            style={{ fontFamily: "var(--font-noto-serif)" }}
+          >
+            $10,353
+          </p>
+          <p className="text-[#515569] mt-1 text-sm">vs yesterday</p>
+        </div>
+
+        {/* Profit Margin */}
+        <div className="bg-white border border-[#E3E5EC] rounded-xl p-6">
+          <h3
+            className="text-[20px] font-semibold text-[#000000]"
+            style={{
+              fontFamily: "var(--font-noto-serif)",
+              letterSpacing: "-0.01em",
+              lineHeight: "150%",
+            }}
+          >
+            Profit Margin
+          </h3>
+          <p
+            className="text-[28px] font-semibold mt-2 text-[#000000]"
+            style={{ fontFamily: "var(--font-noto-serif)" }}
+          >
+            32%
+          </p>
+          <p className="text-[#515569] mt-1 text-sm">vs yesterday</p>
+        </div>
+
       </div>
 
       {/* Chart Section */}
