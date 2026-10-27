@@ -37,7 +37,7 @@ export default function RootLayout({
           <div className="min-h-screen flex flex-col">
 
             {/* Top Navigation */}
-            <header className="h-14 border-b border-[#E3E5EC] bg-[#F9FAFB] flex items-center px-6 justify-between">
+            <header className="h-14 border-b border-[#E3E5EC] bg-[#F5F6F8] flex items-center px-6 justify-between">
               <div className="flex items-center gap-2">
                 <span
                   className="text-[20px] font-semibold"
@@ -50,7 +50,7 @@ export default function RootLayout({
 
               <div className="flex items-center gap-4 text-sm text-[#515569]">
                 <span>Workspace: Kane</span>
-                <button className="px-3 py-1 rounded-lg border border-[#E3E5EC] bg-[#F9FAFB]">
+                <button className="px-3 py-1 rounded-lg border border-[#E3E5EC] bg-[#F5F6F8]">
                   Account
                 </button>
               </div>
