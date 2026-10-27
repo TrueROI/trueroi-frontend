@@ -58,48 +58,6 @@ export default function RootLayout({
 
             <div className="flex flex-1">
 
-              {/* Sidebar Navigation */}
-<aside className="w-64 border-r border-[#E3E5EC] bg-white p-4 space-y-4">
-  <nav className="space-y-2 text-sm">
-
-    <a
-      href="/dashboard"
-      className="block px-3 py-2 rounded-lg hover:bg-[#F5F6FA]"
-    >
-      Dashboard
-    </a>
-
-    <a
-      href="/orders"
-      className="block px-3 py-2 rounded-lg hover:bg-[#F5F6FA]"
-    >
-      Orders
-    </a>
-
-    <a
-      href="/leaks"
-      className="block px-3 py-2 rounded-lg hover:bg-[#F5F6FA]"
-    >
-      Leaks
-    </a>
-
-    <a
-      href="/fix"
-      className="block px-3 py-2 rounded-lg hover:bg-[#F5F6FA]"
-    >
-      Fix Center
-    </a>
-
-    <a
-      href="/settings"
-      className="block px-3 py-2 rounded-lg hover:bg-[#F5F6FA]"
-    >
-      Settings
-    </a>
-
-  </nav>
-</aside>
-
 
               {/* Main Content Area */}
               <main className="flex-1 p-8">

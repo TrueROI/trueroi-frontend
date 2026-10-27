@@ -1,8 +1,17 @@
 "use client";
 
-import { BarChart2, ClipboardList, CreditCard, Settings } from "lucide-react";
+import { 
+  BarChart2, 
+  ClipboardList, 
+  Wrench, 
+  AlertTriangle, 
+  Settings 
+} from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export default function Sidebar() {
+  const pathname = usePathname();
+
   return (
     <aside
       className="
@@ -45,19 +54,35 @@ export default function Sidebar() {
 
       {/* Navigation */}
       <nav className="space-y-2">
+
         <SidebarLink
           label="Dashboard"
           icon={<BarChart2 size={20} />}
-          active
+          href="/dashboard"
+          active={pathname === "/dashboard"}
         />
+
         <SidebarLink
           label="Orders"
           icon={<ClipboardList size={20} />}
+          href="/orders"
+          active={pathname === "/orders"}
         />
+
         <SidebarLink
-          label="Billing"
-          icon={<CreditCard size={20} />}
+          label="Leaks"
+          icon={<AlertTriangle size={20} />}
+          href="/leaks"
+          active={pathname === "/leaks"}
         />
+
+        <SidebarLink
+          label="Fix Center"
+          icon={<Wrench size={20} />}
+          href="/fix"
+          active={pathname === "/fix"}
+        />
+
       </nav>
 
       {/* Bottom Section */}
@@ -65,6 +90,8 @@ export default function Sidebar() {
         <SidebarLink
           label="Settings"
           icon={<Settings size={20} />}
+          href="/settings"
+          active={pathname === "/settings"}
         />
       </div>
     </aside>
@@ -74,14 +101,17 @@ export default function Sidebar() {
 function SidebarLink({
   label,
   icon,
+  href,
   active = false,
 }: {
   label: string;
   icon: React.ReactNode;
+  href: string;
   active?: boolean;
 }) {
   return (
-    <div
+    <a
+      href={href}
       className={`
         flex items-center 
         px-3 py-2 
@@ -115,6 +145,6 @@ function SidebarLink({
       >
         {label}
       </span>
-    </div>
+    </a>
   );
 }
