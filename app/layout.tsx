@@ -30,14 +30,14 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${notoSerif.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-white">
+      <body className="min-h-full bg-[#F5F6F8]">
         <LayoutClientWrapper>
           
           {/* SaaS Layout Shell */}
           <div className="min-h-screen flex flex-col">
 
             {/* Top Navigation */}
-            <header className="h-14 border-b border-[#E3E5EC] bg-white flex items-center px-6 justify-between">
+            <header className="h-14 border-b border-[#E3E5EC] bg-[#F9FAFB] flex items-center px-6 justify-between">
               <div className="flex items-center gap-2">
                 <span
                   className="text-[20px] font-semibold"

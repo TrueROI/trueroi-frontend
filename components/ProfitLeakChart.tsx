@@ -32,7 +32,7 @@ export default function ProfitLeakChart({ data }: ProfitLeakChartProps) {
         <Line
           type="monotone"
           dataKey="profit"
-          stroke="#22c55e"
+          stroke="#4A7C59"
           strokeWidth={3}
           dot={false}
         />
@@ -40,7 +40,7 @@ export default function ProfitLeakChart({ data }: ProfitLeakChartProps) {
         <Line
           type="monotone"
           dataKey="leaks"
-          stroke="#ef4444"
+          stroke="#C76A6A"
           strokeWidth={3}
           dot={false}
         />
