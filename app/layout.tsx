@@ -60,7 +60,7 @@ export default function RootLayout({
 
 
               {/* Main Content Area */}
-              <main className="flex-1 p-8">
+              <main className="flex-1 p-8 bg-[#F7F7F7]">
                 {children}
               </main>
 
