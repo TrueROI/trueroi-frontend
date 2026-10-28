@@ -37,7 +37,7 @@ export default function DashboardPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
         {/* Net Profit */}
-        <div className="bg-white border border-[#E3E5EC] rounded-xl p-6">
+        <div className="bg-[#F7F7F7] border border-[#E3E5EC] rounded-xl p-6">
           <h3 className="text-[20px] font-semibold text-[#000000]" style={{ fontFamily: "var(--font-noto-serif)" }}>
             Net Profit
           </h3>
@@ -48,7 +48,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Total Leaks Detected */}
-        <div className="bg-white border border-[#E3E5EC] rounded-xl p-6">
+        <div className="bg-[#F7F7F7] border border-[#E3E5EC] rounded-xl p-6">
           <h3 className="text-[20px] font-semibold text-[#000000]" style={{ fontFamily: "var(--font-noto-serif)" }}>
             Total Leaks Detected
           </h3>
@@ -59,7 +59,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Money Lost to Leaks */}
-        <div className="bg-white border border-[#E3E5EC] rounded-xl p-6">
+        <div className="bg-[#F7F7F7] border border-[#E3E5EC] rounded-xl p-6">
           <h3 className="text-[20px] font-semibold text-[#000000]" style={{ fontFamily: "var(--font-noto-serif)" }}>
             Money Lost to Leaks
           </h3>
@@ -70,7 +70,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Profit Margin */}
-        <div className="bg-white border border-[#E3E5EC] rounded-xl p-6">
+        <div className="bg-[#F7F7F7] border border-[#E3E5EC] rounded-xl p-6">
           <h3 className="text-[20px] font-semibold text-[#000000]" style={{ fontFamily: "var(--font-noto-serif)" }}>
             Profit Margin
           </h3>
@@ -83,7 +83,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Chart Section */}
-      <div className="bg-white border border-[#E3E5EC] rounded-xl p-8">
+      <div className="bg-[#F7F7F7] border border-[#E3E5EC] rounded-xl p-8">
         <h3 className="text-[20px] font-semibold text-[#000000] mb-6" style={{ fontFamily: "var(--font-noto-serif)" }}>
           Profit vs Leaks Over Time
         </h3>
@@ -94,7 +94,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Recent Profit Audits */}
-      <div className="bg-white border border-[#E3E5EC] rounded-xl p-8">
+      <div className="bg-[#F7F7F7] border border-[#E3E5EC] rounded-xl p-8">
         <h3 className="text-[20px] font-semibold text-[#000000] mb-6" style={{ fontFamily: "var(--font-noto-serif)" }}>
           Recent Profit Audits
         </h3>
