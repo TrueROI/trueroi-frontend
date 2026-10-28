@@ -30,14 +30,14 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${notoSerif.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-[#EFEFF2]">
+      <body className="min-h-full bg-[#F7F7F7]">
         <LayoutClientWrapper>
           
           {/* SaaS Layout Shell */}
           <div className="min-h-screen flex flex-col">
 
             {/* Top Navigation */}
-            <header className="h-14 border-b border-[#E3E5EC] bg-[#EFEFF2] flex items-center px-6 justify-between">
+            <header className="h-14 border-b border-[#E3E5EC] bg-[#F7F7F7] flex items-center px-6 justify-between">
               <div className="flex items-center gap-2">
                 <span
                   className="text-[20px] font-semibold"
@@ -50,7 +50,7 @@ export default function RootLayout({
 
               <div className="flex items-center gap-4 text-sm text-[#515569]">
                 <span>Workspace: Kane</span>
-                <button className="px-3 py-1 rounded-lg border border-[#E3E5EC] bg-[#EFEFF2]">
+                <button className="px-3 py-1 rounded-lg border border-[#E3E5EC] bg-[#F7F7F7]">
                   Account
                 </button>
               </div>
