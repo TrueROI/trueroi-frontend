@@ -18,29 +18,43 @@ export default function ProfitLeakChart({ data }: ProfitLeakChartProps) {
   return (
     <ResponsiveContainer width="100%" height={300}>
       <LineChart data={data}>
-        <XAxis dataKey="date" stroke="#515569" />
-        <YAxis stroke="#515569" />
+        
+        {/* Axis Colors */}
+        <XAxis 
+          dataKey="date" 
+          stroke="var(--tr-text-secondary)" 
+        />
+        <YAxis 
+          stroke="var(--tr-text-secondary)" 
+        />
+
+        {/* Tooltip */}
         <Tooltip
           contentStyle={{
-            backgroundColor: "#FFFFFF",
-            border: "1px solid #E0E0E0",
-            borderRadius: "8px"
+            backgroundColor: "var(--tr-surface)",
+            border: "1px solid var(--tr-border)",
+            borderRadius: "8px",
+            color: "var(--tr-text-primary)",
+            fontFamily: "var(--font-body)"
           }}
         />
+
         <Legend />
 
+        {/* Profit Line */}
         <Line
           type="monotone"
           dataKey="profit"
-          stroke="#4A7C59"
+          stroke="var(--tr-profit)"
           strokeWidth={3}
           dot={false}
         />
 
+        {/* Leak Line */}
         <Line
           type="monotone"
           dataKey="leaks"
-          stroke="#C76A6A"
+          stroke="var(--tr-leak)"
           strokeWidth={3}
           dot={false}
         />

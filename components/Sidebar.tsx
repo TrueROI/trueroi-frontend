@@ -16,34 +16,33 @@ export default function Sidebar() {
     <aside
       className="
         group
-        h-screen 
-        bg-[#EDEDED] 
-        border-r border-[#E3E5EC] 
-        flex flex-col justify-between 
+        h-screen
+        flex flex-col justify-between
         p-4
-        transition-all 
-        duration-300 
-        w-20 
-        hover:w-64
+        transition-all duration-300
+        w-20 hover:w-64
         overflow-hidden
       "
+      style={{
+        background: "var(--tr-surface)",       // slightly darker than main bg
+        borderRight: "1px solid var(--tr-border)"
+      }}
     >
       {/* Logo */}
       <div className="mb-8">
         <span
           className="
             block
-            text-[20px] 
-            font-semibold 
-            text-[#000000] 
-            whitespace-nowrap 
-            opacity-0 
-            transition-opacity 
-            duration-300 
+            text-[20px]
+            whitespace-nowrap
+            opacity-0
+            transition-opacity duration-300
             group-hover:opacity-100
           "
           style={{
-            fontFamily: "var(--font-noto-serif)",
+            fontFamily: "var(--font-heading)",
+            fontWeight: 600,
+            color: "var(--tr-text-primary)",
             lineHeight: "150%",
             letterSpacing: "-0.01em",
           }}
@@ -113,19 +112,25 @@ function SidebarLink({
     <a
       href={href}
       className={`
-        flex items-center 
-        px-3 py-2 
-        rounded-lg 
-        cursor-pointer 
-        transition-colors 
-        duration-200
-        ${active ? "bg-[#E2E5EE] text-[#000000]" : "text-[#515569] hover:bg-[#E3E5EC]"}
+        flex items-center
+        px-3 py-2
+        rounded-lg
+        cursor-pointer
+        transition-colors duration-200
       `}
       style={{
-        fontFamily: "var(--font-noto-serif)",
+        background: active ? "var(--tr-accent)" : "transparent",
+        color: active ? "white" : "var(--tr-text-secondary)",
+        fontFamily: "var(--font-heading)",
         fontWeight: 600,
         letterSpacing: "-0.01em",
         lineHeight: "150%",
+      }}
+      onMouseEnter={(e) => {
+        if (!active) e.currentTarget.style.background = "var(--tr-border)";
+      }}
+      onMouseLeave={(e) => {
+        if (!active) e.currentTarget.style.background = "transparent";
       }}
     >
       {/* ICON ALWAYS VISIBLE */}
@@ -136,10 +141,9 @@ function SidebarLink({
       {/* TEXT ONLY SHOWS WHEN EXPANDED */}
       <span
         className="
-          whitespace-nowrap 
-          opacity-0 
-          transition-opacity 
-          duration-300 
+          whitespace-nowrap
+          opacity-0
+          transition-opacity duration-300
           group-hover:opacity-100
         "
       >

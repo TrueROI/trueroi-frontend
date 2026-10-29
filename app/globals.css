@@ -1,26 +1,101 @@
 @import "tailwindcss";
 
+/* ============================
+   TRUE ROI BRAND THEME
+   ============================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Light Mode Colors */
+  --background: #FAFAF9;        /* App background */
+  --foreground: #171412;        /* Primary text */
+
+  --tr-accent: #2E99E5;         /* Brand blue */
+  --tr-surface: #FFFFFF;        /* Cards / panels */
+  --tr-border: #E3E5EC;         /* Soft borders */
+
+  --tr-text-primary: #171412;   /* Warm black */
+  --tr-text-secondary: #4A4A4A; /* Muted gray */
+  --tr-text-muted: #7A7A7A;     /* Extra muted */
+
+  --tr-profit: #41D33E;         /* Profit green */
+  --tr-leak: #F73730;           /* Leak red */
+
+  /* Typography */
+  --font-heading: "Public Sans", sans-serif;
+  --font-body: "Public Sans", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ============================
+   DARK MODE
+   ============================ */
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+
+    --tr-surface: #1a1a1a;
+    --tr-border: #2a2a2a;
+
+    --tr-text-primary: #ededed;
+    --tr-text-secondary: #cfcfcf;
+    --tr-text-muted: #9f9f9f;
   }
 }
+
+/* ============================
+   GLOBAL STYLES
+   ============================ */
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================
+   TRUE ROI UTILITY CLASSES
+   ============================ */
+
+/* Surfaces (cards, panels, containers) */
+.tr-surface {
+  background: var(--tr-surface);
+  border: 1px solid var(--tr-border);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+/* Headings */
+.tr-heading {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--tr-text-primary);
+}
+
+/* Body text */
+.tr-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--tr-text-secondary);
+}
+
+/* Accent button */
+.tr-btn {
+  background: var(--tr-accent);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+/* Profit / Leak colors */
+.tr-profit {
+  color: var(--tr-profit);
+}
+
+.tr-leak {
+  color: var(--tr-leak);
 }

@@ -11,19 +11,31 @@ export default function Greeting({
 }) {
   return (
     <div
-      className="space-y-1" // tighter spacing
+      className="space-y-1"
       style={{
-        fontFamily: "var(--font-noto-serif)",
-        fontWeight: 600,
+        fontFamily: "var(--font-body)",
         letterSpacing: "-0.01em",
-        lineHeight: "140%", // slightly tighter
+        lineHeight: "140%",
       }}
     >
-      <h1 className="text-[26px] text-[#000000]">
+      <h1
+        className="text-[26px]"
+        style={{
+          fontFamily: "var(--font-heading)",
+          fontWeight: 600,
+          color: "var(--tr-text-primary)",
+        }}
+      >
         Welcome back, {merchantName} 👋
       </h1>
 
-      <p className="text-[#515569] text-[16px]">
+      <p
+        className="text-[16px]"
+        style={{
+          color: "var(--tr-text-secondary)",
+          fontFamily: "var(--font-body)",
+        }}
+      >
         {shopName} • Last sync: {lastSync}
       </p>
     </div>

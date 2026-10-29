@@ -20,9 +20,21 @@ export default function MetricCard({
   // Loading skeleton
   if (loading) {
     return (
-      <div className="bg-[#FFFFFF] rounded-xl shadow-sm p-6 border border-[#E0E0E0] animate-pulse">
-        <div className="h-4 w-24 bg-[#E0E0E0] rounded mb-3"></div>
-        <div className="h-6 w-32 bg-[#E3E5EC] rounded"></div>
+      <div
+        className="rounded-xl shadow-sm p-6 animate-pulse"
+        style={{
+          background: "var(--tr-surface)",
+          border: "1px solid var(--tr-border)",
+        }}
+      >
+        <div
+          className="h-4 w-24 rounded mb-3"
+          style={{ background: "var(--tr-border)" }}
+        ></div>
+        <div
+          className="h-6 w-32 rounded"
+          style={{ background: "var(--tr-border)" }}
+        ></div>
       </div>
     );
   }
@@ -30,26 +42,70 @@ export default function MetricCard({
   // Error state
   if (error) {
     return (
-      <div className="bg-red-50 rounded-xl shadow-sm p-6 border border-red-200">
-        <p className="text-red-600 font-medium">Unable to load data</p>
+      <div
+        className="rounded-xl shadow-sm p-6"
+        style={{
+          background: "rgba(199, 106, 106, 0.1)", // soft leak red
+          border: "1px solid var(--tr-leak)",
+        }}
+      >
+        <p
+          style={{
+            color: "var(--tr-leak)",
+            fontFamily: "var(--font-heading)",
+            fontWeight: 600,
+          }}
+        >
+          Unable to load data
+        </p>
       </div>
     );
   }
 
   // Normal card
   return (
-    <div className="bg-[#FFFFFF] rounded-xl shadow-sm p-6 border border-[#E0E0E0] flex flex-col gap-2">
-      <p className="text-sm text-[#515569]">{title}</p>
+    <div
+      className="rounded-xl shadow-sm p-6 flex flex-col gap-2"
+      style={{
+        background: "var(--tr-surface)",
+        border: "1px solid var(--tr-border)",
+      }}
+    >
+      {/* Title */}
+      <p
+        className="text-sm"
+        style={{
+          color: "var(--tr-text-secondary)",
+          fontFamily: "var(--font-body)",
+        }}
+      >
+        {title}
+      </p>
 
+      {/* Value + Trend */}
       <div className="flex items-center gap-2">
-        <span className="text-3xl font-semibold text-[#000000]">{value}</span>
+        <span
+          className="text-3xl font-semibold"
+          style={{
+            color: "var(--tr-text-primary)",
+            fontFamily: "var(--font-heading)",
+          }}
+        >
+          {value}
+        </span>
 
         {trend === "up" && (
-          <ArrowUp size={20} className="text-green-600" />
+          <ArrowUp
+            size={20}
+            style={{ color: "var(--tr-accent)" }} // brand accent blue
+          />
         )}
 
         {trend === "down" && (
-          <ArrowDown size={20} className="text-red-600" />
+          <ArrowDown
+            size={20}
+            style={{ color: "var(--tr-leak)" }} // leak red
+          />
         )}
       </div>
     </div>

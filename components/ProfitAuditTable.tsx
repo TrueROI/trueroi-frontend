@@ -60,115 +60,176 @@ export default function ProfitAuditTable() {
     fetchOrders();
   }, [page, sortBy, sortDirection, startDate, endDate, leakType, minProfit, maxProfit]);
 
+  /* ============================
+     LOADING STATE
+     ============================ */
   if (loading) {
     return (
       <div className="space-y-3">
         {[...Array(10)].map((_, i) => (
-          <div key={i} className="h-12 bg-gray-200 animate-pulse rounded" />
+          <div
+            key={i}
+            className="h-12 rounded animate-pulse"
+            style={{ background: "var(--tr-border)" }}
+          />
         ))}
       </div>
     );
   }
 
+  /* ============================
+     ERROR STATE
+     ============================ */
   if (error) {
-  return (
-    <div className="p-6 bg-red-50 border border-red-200 rounded-xl">
-      <p className="text-red-600 font-medium mb-3">
-        Something went wrong while loading your audit data.
-      </p>
-      <button
-        onClick={() => location.reload()}
-        className="px-4 py-2 bg-red-600 text-white rounded"
+    return (
+      <div
+        className="p-6 rounded-xl"
+        style={{
+          background: "rgba(199, 106, 106, 0.1)",
+          border: "1px solid var(--tr-leak)",
+        }}
       >
-        Retry
-      </button>
-    </div>
-  );
-}
+        <p
+          className="mb-3"
+          style={{
+            color: "var(--tr-leak)",
+            fontFamily: "var(--font-heading)",
+            fontWeight: 600,
+          }}
+        >
+          Something went wrong while loading your audit data.
+        </p>
 
+        <button
+          onClick={() => location.reload()}
+          style={{
+            background: "var(--tr-leak)",
+            color: "white",
+            padding: "8px 16px",
+            borderRadius: "8px",
+            fontFamily: "var(--font-heading)",
+            fontWeight: 600,
+          }}
+        >
+          Retry
+        </button>
+      </div>
+    );
+  }
 
+  /* ============================
+     MAIN TABLE
+     ============================ */
   return (
-    <div className="bg-white p-6 rounded-xl shadow">
-      <h2 className="text-xl font-semibold mb-4">Profit Audit</h2>
+    <div
+      className="p-6 rounded-xl shadow-sm"
+      style={{
+        background: "var(--tr-surface)",
+        border: "1px solid var(--tr-border)",
+      }}
+    >
+      <h2
+        className="text-xl mb-4"
+        style={{
+          fontFamily: "var(--font-heading)",
+          fontWeight: 600,
+          color: "var(--tr-text-primary)",
+        }}
+      >
+        Profit Audit
+      </h2>
 
       {/* FILTERS */}
       <div className="grid grid-cols-3 gap-4 mb-6">
-        <div>
-          <label className="block text-sm mb-1">Start Date</label>
-          <input
-            type="date"
-            value={startDate}
-            onChange={(e) => setStartDate(e.target.value)}
-            className="border rounded px-3 py-2 w-full"
-          />
-        </div>
+        {[
+          { label: "Start Date", value: startDate, setter: setStartDate, type: "date" },
+          { label: "End Date", value: endDate, setter: setEndDate, type: "date" },
+          { label: "Leak Type", value: leakType, setter: setLeakType, type: "select" },
+          { label: "Min Profit", value: minProfit, setter: setMinProfit, type: "number" },
+          { label: "Max Profit", value: maxProfit, setter: setMaxProfit, type: "number" },
+        ].map((field, i) => (
+          <div key={i}>
+            <label
+              className="block text-sm mb-1"
+              style={{
+                color: "var(--tr-text-secondary)",
+                fontFamily: "var(--font-body)",
+              }}
+            >
+              {field.label}
+            </label>
 
-        <div>
-          <label className="block text-sm mb-1">End Date</label>
-          <input
-            type="date"
-            value={endDate}
-            onChange={(e) => setEndDate(e.target.value)}
-            className="border rounded px-3 py-2 w-full"
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm mb-1">Leak Type</label>
-          <select
-            value={leakType}
-            onChange={(e) => setLeakType(e.target.value)}
-            className="border rounded px-3 py-2 w-full"
-          >
-            <option value="">All</option>
-            <option value="HIGH_SHIPPING">High Shipping</option>
-            <option value="LOW_MARGIN">Low Margin</option>
-            <option value="REFUND">Refund</option>
-            <option value="CHARGEBACK">Chargeback</option>
-          </select>
-        </div>
-
-        <div>
-          <label className="block text-sm mb-1">Min Profit</label>
-          <input
-            type="number"
-            value={minProfit}
-            onChange={(e) => setMinProfit(e.target.value)}
-            className="border rounded px-3 py-2 w-full"
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm mb-1">Max Profit</label>
-          <input
-            type="number"
-            value={maxProfit}
-            onChange={(e) => setMaxProfit(e.target.value)}
-            className="border rounded px-3 py-2 w-full"
-          />
-        </div>
+            {field.type === "select" ? (
+              <select
+                value={field.value}
+                onChange={(e) => field.setter(e.target.value)}
+                className="border rounded px-3 py-2 w-full"
+                style={{
+                  background: "var(--tr-surface)",
+                  borderColor: "var(--tr-border)",
+                  color: "var(--tr-text-primary)",
+                  fontFamily: "var(--font-body)",
+                }}
+              >
+                <option value="">All</option>
+                <option value="HIGH_SHIPPING">High Shipping</option>
+                <option value="LOW_MARGIN">Low Margin</option>
+                <option value="REFUND">Refund</option>
+                <option value="CHARGEBACK">Chargeback</option>
+              </select>
+            ) : (
+              <input
+                type={field.type}
+                value={field.value}
+                onChange={(e) => field.setter(e.target.value)}
+                className="border rounded px-3 py-2 w-full"
+                style={{
+                  background: "var(--tr-surface)",
+                  borderColor: "var(--tr-border)",
+                  color: "var(--tr-text-primary)",
+                  fontFamily: "var(--font-body)",
+                }}
+              />
+            )}
+          </div>
+        ))}
       </div>
 
       {/* TABLE */}
       <table className="w-full text-left">
         <thead>
-          <tr className="border-b">
-            <th className="py-2 cursor-pointer" onClick={() => toggleSort("id")}>
-              Order
+          <tr style={{ borderBottom: "1px solid var(--tr-border)" }}>
+            {[
+              { key: "id", label: "Order" },
+              { key: "revenue", label: "Revenue" },
+              { key: "fees", label: "Fees" },
+              { key: "shipping", label: "Shipping" },
+              { key: "net", label: "Net" },
+            ].map((col) => (
+              <th
+                key={col.key}
+                className="py-2 cursor-pointer"
+                onClick={() => toggleSort(col.key)}
+                style={{
+                  color: "var(--tr-text-secondary)",
+                  fontFamily: "var(--font-heading)",
+                  fontWeight: 600,
+                }}
+              >
+                {col.label}
+              </th>
+            ))}
+
+            <th
+              className="py-2"
+              style={{
+                color: "var(--tr-text-secondary)",
+                fontFamily: "var(--font-heading)",
+                fontWeight: 600,
+              }}
+            >
+              Leaks
             </th>
-            <th className="py-2 cursor-pointer" onClick={() => toggleSort("revenue")}>
-              Revenue
-            </th>
-            <th className="py-2 cursor-pointer" onClick={() => toggleSort("fees")}>
-              Fees
-            </th>
-            <th className="py-2 cursor-pointer" onClick={() => toggleSort("shipping")}>
-              Shipping
-            </th>
-            <th className="py-2 cursor-pointer" onClick={() => toggleSort("net")}>
-              Net
-            </th>
-            <th className="py-2">Leaks</th>
           </tr>
         </thead>
 
@@ -176,8 +237,17 @@ export default function ProfitAuditTable() {
           {orders.map((order) => (
             <tr
               key={order.id}
-              className="border-b hover:bg-gray-50 cursor-pointer"
+              className="cursor-pointer"
+              style={{
+                borderBottom: "1px solid var(--tr-border)",
+              }}
               onClick={() => (window.location.href = `/audit/${order.id}`)}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.background = "var(--tr-bg)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.background = "transparent")
+              }
             >
               <td className="py-2">{order.id}</td>
               <td className="py-2">${order.revenue ?? "—"}</td>
@@ -187,12 +257,13 @@ export default function ProfitAuditTable() {
 
               <td className="py-2">
                 {order.leaks?.length > 0 ? (
-                  <span className="text-red-500">{order.leaks.join(", ")}</span>
+                  <span style={{ color: "var(--tr-leak)" }}>
+                    {order.leaks.join(", ")}
+                  </span>
                 ) : (
-                  <span className="text-green-500">None</span>
+                  <span style={{ color: "var(--tr-profit)" }}>None</span>
                 )}
               </td>
-
             </tr>
           ))}
         </tbody>
@@ -203,20 +274,38 @@ export default function ProfitAuditTable() {
         <button
           onClick={() => setPage((p) => Math.max(1, p - 1))}
           disabled={page === 1}
-          className={`px-4 py-2 rounded ${
-            page === 1
-              ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-              : "bg-gray-800 text-white"
-          }`}
+          style={{
+            padding: "8px 16px",
+            borderRadius: "8px",
+            background: page === 1 ? "var(--tr-border)" : "var(--tr-accent)",
+            color: page === 1 ? "var(--tr-text-muted)" : "white",
+            cursor: page === 1 ? "not-allowed" : "pointer",
+            fontFamily: "var(--font-heading)",
+            fontWeight: 600,
+          }}
         >
           Previous
         </button>
 
-        <span className="text-gray-600">Page {page}</span>
+        <span
+          style={{
+            color: "var(--tr-text-secondary)",
+            fontFamily: "var(--font-body)",
+          }}
+        >
+          Page {page}
+        </span>
 
         <button
           onClick={() => setPage((p) => p + 1)}
-          className="px-4 py-2 bg-gray-800 text-white rounded"
+          style={{
+            padding: "8px 16px",
+            borderRadius: "8px",
+            background: "var(--tr-accent)",
+            color: "white",
+            fontFamily: "var(--font-heading)",
+            fontWeight: 600,
+          }}
         >
           Next
         </button>

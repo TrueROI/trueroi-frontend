@@ -9,14 +9,26 @@ export default function LayoutClientWrapper({ children }: { children: React.Reac
   const globalError = "";
 
   return (
-    <div className="flex bg-[#F7F7F7] text-black">
+    <div
+      className="flex"
+      style={{
+        background: "var(--tr-bg)",
+        color: "var(--tr-text-primary)",
+        fontFamily: "var(--font-body)",
+      }}
+    >
       {isLoading && <GlobalSpinner />}
 
       {/* Sidebar */}
       <Sidebar />
 
       {/* Main Content */}
-      <main className="flex-1 p-8 overflow-y-auto">
+      <main
+        className="flex-1 p-8 overflow-y-auto"
+        style={{
+          fontFamily: "var(--font-body)",
+        }}
+      >
         <ErrorBanner message={globalError} />
         {children}
       </main>

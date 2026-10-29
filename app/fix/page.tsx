@@ -2,12 +2,16 @@
 
 export default function FixCenterPage() {
   return (
-    <div className="space-y-10">
-
+    <div className="space-y-10" style={{ fontFamily: "var(--font-body)" }}>
+      
       {/* Page Title */}
       <h1
-        className="text-[28px] font-semibold"
-        style={{ fontFamily: "var(--font-noto-serif)" }}
+        className="text-[28px]"
+        style={{
+          fontFamily: "var(--font-heading)",
+          fontWeight: 600,
+          color: "var(--tr-text-primary)",
+        }}
       >
         Fix Center
       </h1>
@@ -16,20 +20,39 @@ export default function FixCenterPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
         {/* Fix 1 — High Shipping Costs */}
-        <div className="bg-white border border-[#E3E5EC] rounded-xl p-6">
+        <div
+          className="rounded-xl p-6"
+          style={{
+            background: "var(--tr-surface)",
+            border: "1px solid var(--tr-border)",
+          }}
+        >
           <h2
-            className="text-[20px] font-semibold text-[#000000]"
-            style={{ fontFamily: "var(--font-noto-serif)" }}
+            className="text-[20px]"
+            style={{
+              fontFamily: "var(--font-heading)",
+              fontWeight: 600,
+              color: "var(--tr-text-primary)",
+            }}
           >
             High Shipping Costs
           </h2>
 
-          <p className="text-[#515569] mt-2">
+          <p
+            className="mt-2"
+            style={{
+              color: "var(--tr-text-secondary)",
+              fontFamily: "var(--font-body)",
+            }}
+          >
             Your shipping costs are above industry average for this product category.
             This usually happens due to packaging size, carrier choice, or incorrect Shopify shipping profiles.
           </p>
 
-          <ul className="mt-4 text-[#515569] list-disc ml-6">
+          <ul
+            className="mt-4 list-disc ml-6"
+            style={{ color: "var(--tr-text-secondary)" }}
+          >
             <li>Switch to a cheaper carrier</li>
             <li>Use Shopify discounted shipping rates</li>
             <li>Reduce package dimensions or weight</li>
@@ -37,8 +60,13 @@ export default function FixCenterPage() {
           </ul>
 
           <button
-            className="mt-4 px-4 py-2 rounded-lg text-sm font-semibold bg-black text-white"
-            style={{ fontFamily: "var(--font-noto-serif)" }}
+            className="mt-4 px-4 py-2 rounded-lg text-sm"
+            style={{
+              background: "var(--tr-accent)",
+              color: "white",
+              fontFamily: "var(--font-heading)",
+              fontWeight: 600,
+            }}
             onClick={() => alert("This will open the Shopify shipping settings soon.")}
           >
             Open in Shopify
@@ -46,20 +74,39 @@ export default function FixCenterPage() {
         </div>
 
         {/* Fix 2 — Low Margin Products */}
-        <div className="bg-white border border-[#E3E5EC] rounded-xl p-6">
+        <div
+          className="rounded-xl p-6"
+          style={{
+            background: "var(--tr-surface)",
+            border: "1px solid var(--tr-border)",
+          }}
+        >
           <h2
-            className="text-[20px] font-semibold text-[#000000]"
-            style={{ fontFamily: "var(--font-noto-serif)" }}
+            className="text-[20px]"
+            style={{
+              fontFamily: "var(--font-heading)",
+              fontWeight: 600,
+              color: "var(--tr-text-primary)",
+            }}
           >
             Low Margin Products
           </h2>
 
-          <p className="text-[#515569] mt-2">
+          <p
+            className="mt-2"
+            style={{
+              color: "var(--tr-text-secondary)",
+              fontFamily: "var(--font-body)",
+            }}
+          >
             These products are being sold with margins below 20%, causing silent profit loss.
             This usually happens when COGS is too high or the selling price is too low.
           </p>
 
-          <ul className="mt-4 text-[#515569] list-disc ml-6">
+          <ul
+            className="mt-4 list-disc ml-6"
+            style={{ color: "var(--tr-text-secondary)" }}
+          >
             <li>Raise product price</li>
             <li>Negotiate lower cost of goods</li>
             <li>Remove aggressive discount codes</li>
@@ -67,8 +114,13 @@ export default function FixCenterPage() {
           </ul>
 
           <button
-            className="mt-4 px-4 py-2 rounded-lg text-sm font-semibold bg-black text-white"
-            style={{ fontFamily: "var(--font-noto-serif)" }}
+            className="mt-4 px-4 py-2 rounded-lg text-sm"
+            style={{
+              background: "var(--tr-accent)",
+              color: "white",
+              fontFamily: "var(--font-heading)",
+              fontWeight: 600,
+            }}
             onClick={() => alert("This will open the Shopify product editor soon.")}
           >
             Edit Product
@@ -76,20 +128,39 @@ export default function FixCenterPage() {
         </div>
 
         {/* Fix 3 — Over-Discounting */}
-        <div className="bg-white border border-[#E3E5EC] rounded-xl p-6">
+        <div
+          className="rounded-xl p-6"
+          style={{
+            background: "var(--tr-surface)",
+            border: "1px solid var(--tr-border)",
+          }}
+        >
           <h2
-            className="text-[20px] font-semibold text-[#000000]"
-            style={{ fontFamily: "var(--font-noto-serif)" }}
+            className="text-[20px]"
+            style={{
+              fontFamily: "var(--font-heading)",
+              fontWeight: 600,
+              color: "var(--tr-text-primary)",
+            }}
           >
             Over-Discounting
           </h2>
 
-          <p className="text-[#515569] mt-2">
+          <p
+            className="mt-2"
+            style={{
+              color: "var(--tr-text-secondary)",
+              fontFamily: "var(--font-body)",
+            }}
+          >
             Discounts are reducing profit margins more than expected, especially on repeat buyers.
             This often happens when discount codes stack or are applied too frequently.
           </p>
 
-          <ul className="mt-4 text-[#515569] list-disc ml-6">
+          <ul
+            className="mt-4 list-disc ml-6"
+            style={{ color: "var(--tr-text-secondary)" }}
+          >
             <li>Reduce discount percentage</li>
             <li>Limit discount usage per customer</li>
             <li>Remove old or unused discount codes</li>
@@ -97,8 +168,13 @@ export default function FixCenterPage() {
           </ul>
 
           <button
-            className="mt-4 px-4 py-2 rounded-lg text-sm font-semibold bg-black text-white"
-            style={{ fontFamily: "var(--font-noto-serif)" }}
+            className="mt-4 px-4 py-2 rounded-lg text-sm"
+            style={{
+              background: "var(--tr-accent)",
+              color: "white",
+              fontFamily: "var(--font-heading)",
+              fontWeight: 600,
+            }}
             onClick={() => alert("This will open Shopify discount settings soon.")}
           >
             Manage Discounts
@@ -106,19 +182,38 @@ export default function FixCenterPage() {
         </div>
 
         {/* Fix 4 — High Fees */}
-        <div className="bg-white border border-[#E3E5EC] rounded-xl p-6">
+        <div
+          className="rounded-xl p-6"
+          style={{
+            background: "var(--tr-surface)",
+            border: "1px solid var(--tr-border)",
+          }}
+        >
           <h2
-            className="text-[20px] font-semibold text-[#000000]"
-            style={{ fontFamily: "var(--font-noto-serif)" }}
+            className="text-[20px]"
+            style={{
+              fontFamily: "var(--font-heading)",
+              fontWeight: 600,
+              color: "var(--tr-text-primary)",
+            }}
           >
             High Fees
           </h2>
 
-          <p className="text-[#515569] mt-2">
+          <p
+            className="mt-2"
+            style={{
+              color: "var(--tr-text-secondary)",
+              fontFamily: "var(--font-body)",
+            }}
+          >
             Transaction fees are eating into your profit margins. This usually happens with certain payment gateways or high refund rates.
           </p>
 
-          <ul className="mt-4 text-[#515569] list-disc ml-6">
+          <ul
+            className="mt-4 list-disc ml-6"
+            style={{ color: "var(--tr-text-secondary)" }}
+          >
             <li>Switch to Shopify Payments</li>
             <li>Reduce refund frequency</li>
             <li>Encourage lower-fee payment methods</li>
@@ -126,8 +221,13 @@ export default function FixCenterPage() {
           </ul>
 
           <button
-            className="mt-4 px-4 py-2 rounded-lg text-sm font-semibold bg-black text-white"
-            style={{ fontFamily: "var(--font-noto-serif)" }}
+            className="mt-4 px-4 py-2 rounded-lg text-sm"
+            style={{
+              background: "var(--tr-accent)",
+              color: "white",
+              fontFamily: "var(--font-heading)",
+              fontWeight: 600,
+            }}
             onClick={() => alert("This will open Shopify payment settings soon.")}
           >
             Payment Settings
@@ -135,7 +235,6 @@ export default function FixCenterPage() {
         </div>
 
       </div>
-
     </div>
   );
 }
