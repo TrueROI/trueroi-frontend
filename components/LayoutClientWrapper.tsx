@@ -9,7 +9,7 @@ export default function LayoutClientWrapper({ children }: { children: React.Reac
   const globalError = "";
 
   return (
-    <div className="flex min-h-screen bg-[#F7F7F7] text-black">
+    <div className="flex bg-[#F7F7F7] text-black">
       {isLoading && <GlobalSpinner />}
 
       {/* Sidebar */}
