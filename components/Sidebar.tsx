@@ -17,7 +17,7 @@ export default function Sidebar() {
       className="
         group
         h-screen 
-        bg-[#E5E5E5] 
+        bg-[#E3E5EC] 
         border-r border-[#E3E5EC] 
         flex flex-col justify-between 
         p-4
