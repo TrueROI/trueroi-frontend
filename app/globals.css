@@ -29,20 +29,6 @@
    DARK MODE
    ============================ */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-
-    --tr-surface: #1a1a1a;
-    --tr-border: #2a2a2a;
-
-    --tr-text-primary: #ededed;
-    --tr-text-secondary: #cfcfcf;
-    --tr-text-muted: #9f9f9f;
-  }
-}
-
 /* ============================
    GLOBAL STYLES
    ============================ */
