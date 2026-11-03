@@ -185,7 +185,7 @@ function DashboardCard({ title, value, sub }: DashboardCardProps) {
       style={{
         background: "var(--tr-surface)",
         border: "1px solid var(--tr-border)",
-        boxShadow: "0px 6px 20px rgba(0, 0, 0, 0.05)", // ⭐ new shadow
+        boxShadow: "0px 10px 25px rgba(0, 0, 0, 0.06)", // ⭐ new shadow
       }}
     >
       <h3
