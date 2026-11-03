@@ -33,11 +33,11 @@ export default function RootLayout({
           {/* SaaS Layout Shell */}
           <div className="min-h-screen flex flex-col">
 
-            {/* Top Navigation */}
+            {/* Top Navigation with Gradient */}
             <header
               className="h-14 flex items-center px-6 justify-between"
               style={{
-                background: "var(--tr-bg)",
+                background: "linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(247,247,247,1) 40%, rgba(247,247,247,1) 100%)",
                 borderBottom: "1px solid var(--tr-border)",
               }}
             >
@@ -83,7 +83,9 @@ export default function RootLayout({
             <div className="flex flex-1">
               <main
                 className="flex-1 p-8"
-                style={{ background: "var(--tr-bg)" }}
+                style={{
+                  background: "var(--tr-bg)",
+                }}
               >
                 {children}
               </main>
