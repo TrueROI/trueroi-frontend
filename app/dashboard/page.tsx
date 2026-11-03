@@ -9,19 +9,8 @@ const ProfitLeakChart = dynamic(
   { ssr: false }
 );
 
-// Example chart data
-const chartData = [
-  { date: "Oct 1", profit: 3200, leaks: 400 },
-  { date: "Oct 2", profit: 3500, leaks: 380 },
-  { date: "Oct 3", profit: 2900, leaks: 500 },
-  { date: "Oct 4", profit: 4100, leaks: 300 },
-  { date: "Oct 5", profit: 3800, leaks: 450 },
-  { date: "Oct 6", profit: 4200, leaks: 320 },
-  { date: "Oct 7", profit: 4600, leaks: 280 },
-];
-
 // -----------------------------
-// TYPES
+// TYPES (must be above components)
 // -----------------------------
 interface DashboardCardProps {
   title: string;
@@ -39,20 +28,46 @@ interface AuditRowProps {
   netColor: string;
 }
 
+// Example chart data
+const chartData = [
+  { date: "Oct 1", profit: 3200, leaks: 400 },
+  { date: "Oct 2", profit: 3500, leaks: 380 },
+  { date: "Oct 3", profit: 2900, leaks: 500 },
+  { date: "Oct 4", profit: 4100, leaks: 300 },
+  { date: "Oct 5", profit: 3800, leaks: 450 },
+  { date: "Oct 6", profit: 4200, leaks: 320 },
+  { date: "Oct 7", profit: 4600, leaks: 280 },
+];
+
 // -----------------------------
 // PAGE
 // -----------------------------
 export default function DashboardPage() {
   return (
     <div className="space-y-10" style={{ fontFamily: "var(--font-body)" }}>
-      
-      {/* Greeting */}
-      <div className="text-center">
-        <Greeting
-          merchantName="Kane"
-          shopName="TrueROI Profit Guard"
-          lastSync="Oct 7, 2026 — 4:55 PM"
-        />
+
+      {/* ⭐ TOP GRADIENT SECTION */}
+      <div
+        style={{
+          background: `
+            linear-gradient(
+              to bottom,
+              rgba(255,255,255,1) 0%,
+              rgba(247,247,247,1) 40%,
+              var(--tr-bg) 100%
+            )
+          `,
+          paddingBottom: "40px",
+          borderBottom: "1px solid var(--tr-border)",
+        }}
+      >
+        <div className="text-center">
+          <Greeting
+            merchantName="Kane"
+            shopName="TrueROI Profit Guard"
+            lastSync="Oct 7, 2026 — 4:55 PM"
+          />
+        </div>
       </div>
 
       {/* KPI Cards */}
@@ -185,7 +200,7 @@ function DashboardCard({ title, value, sub }: DashboardCardProps) {
       style={{
         background: "var(--tr-surface)",
         border: "1px solid var(--tr-border)",
-        boxShadow: "0px 3px 8px rgba(0, 0, 0, 0.12)", // ⭐ new shadow
+        boxShadow: "0px 3px 8px rgba(0, 0, 0, 0.12)",
       }}
     >
       <h3
