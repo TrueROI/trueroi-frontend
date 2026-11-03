@@ -229,14 +229,29 @@ function AuditRow({
 }: AuditRowProps) {
   return (
     <tr style={{ borderBottom: "1px solid var(--tr-border)" }}>
-      <td className="py-3 px-2">{id}</td>
+      <td className="py-3 px-2" style={{ fontFamily: "var(--font-heading)" }}>
+        {id}
+      </td>
       <td className="py-3 px-2">{product}</td>
-      <td className="py-3 px-2">{revenue}</td>
-      <td className="py-3 px-2">{fees}</td>
-      <td className="py-3 px-2">{shipping}</td>
+
+      <td className="py-3 px-2" style={{ fontFamily: "var(--font-heading)" }}>
+        {revenue}
+      </td>
+
+      <td className="py-3 px-2" style={{ fontFamily: "var(--font-heading)" }}>
+        {fees}
+      </td>
+
+      <td className="py-3 px-2" style={{ fontFamily: "var(--font-heading)" }}>
+        {shipping}
+      </td>
+
       <td
         className="py-3 px-2 font-semibold"
-        style={{ color: netColor }}
+        style={{
+          color: netColor,
+          fontFamily: "var(--font-heading)",
+        }}
       >
         {net}
       </td>

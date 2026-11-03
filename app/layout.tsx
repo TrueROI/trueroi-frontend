@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Noto_Serif } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
 import LayoutClientWrapper from "../components/LayoutClientWrapper";
@@ -7,12 +7,6 @@ import LayoutClientWrapper from "../components/LayoutClientWrapper";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-});
-
-const notoSerif = Noto_Serif({
-  variable: "--font-noto-serif",
-  subsets: ["latin"],
-  weight: ["400", "600"],
 });
 
 export const metadata: Metadata = {
@@ -28,43 +22,73 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${notoSerif.variable} h-full antialiased`}
+      className={`${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-[#F7F7F7]">
+      <body
+        className="min-h-full"
+        style={{ background: "var(--tr-bg)" }}
+      >
         <LayoutClientWrapper>
           
           {/* SaaS Layout Shell */}
           <div className="min-h-screen flex flex-col">
 
             {/* Top Navigation */}
-            <header className="h-14 border-b border-[#E3E5EC] bg-[#F7F7F7] flex items-center px-6 justify-between">
+            <header
+              className="h-14 flex items-center px-6 justify-between"
+              style={{
+                background: "var(--tr-bg)",
+                borderBottom: "1px solid var(--tr-border)",
+              }}
+            >
               <div className="flex items-center gap-2">
                 <span
                   className="text-[20px] font-semibold"
-                  style={{ fontFamily: "var(--font-noto-serif)" }}
+                  style={{
+                    fontFamily: "var(--font-heading)",
+                    color: "var(--tr-text-primary)",
+                  }}
                 >
                   TrueROI
                 </span>
-                <span className="text-xs text-[#828282]">Profit Guard</span>
+
+                <span
+                  className="text-xs"
+                  style={{ color: "var(--tr-text-secondary)" }}
+                >
+                  Profit Guard
+                </span>
               </div>
 
-              <div className="flex items-center gap-4 text-sm text-[#515569]">
+              <div
+                className="flex items-center gap-4 text-sm"
+                style={{ color: "var(--tr-text-secondary)" }}
+              >
                 <span>Workspace: Kane</span>
-                <button className="px-3 py-1 rounded-lg border border-[#E3E5EC] bg-[#F7F7F7]">
+
+                <button
+                  className="px-3 py-1 rounded-lg"
+                  style={{
+                    background: "var(--tr-bg)",
+                    border: "1px solid var(--tr-border)",
+                    color: "var(--tr-text-primary)",
+                  }}
+                >
                   Account
                 </button>
               </div>
             </header>
 
+            {/* Main Content Area */}
             <div className="flex flex-1">
-
-
-              {/* Main Content Area */}
-              <main className="flex-1 p-8 bg-[#F7F7F7]">
+              <main
+                className="flex-1 p-8"
+                style={{ background: "var(--tr-bg)" }}
+              >
                 {children}
               </main>
-
             </div>
+
           </div>
 
         </LayoutClientWrapper>
