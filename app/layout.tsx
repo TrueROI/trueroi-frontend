@@ -87,8 +87,8 @@ export default function RootLayout({
                   background: `
                     linear-gradient(
                       to bottom,
-                      rgba(255,255,255,1) 0%,
-                      rgba(247,247,247,1) 50%,
+                      rgb(228, 40, 40) 0%,
+                      rgb(39, 102, 238) 50%,
                       var(--tr-bg) 100%
                     )
                   `,
