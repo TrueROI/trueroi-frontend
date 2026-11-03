@@ -84,7 +84,7 @@ export default function RootLayout({
               <main
                 className="flex-1 p-8"
                 style={{
-                  background: "var(--tr-bg)",
+                  background: "linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(247,247,247,1) 60%, var(--tr-bg) 100%)",
                 }}
               >
                 {children}
