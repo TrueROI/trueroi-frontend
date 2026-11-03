@@ -193,6 +193,7 @@ function DashboardCard({ title, value, sub }: DashboardCardProps) {
           fontFamily: "var(--font-heading)",
           fontWeight: 600,
           color: "var(--tr-text-primary)",
+          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.06)", // ⭐ new shadow
         }}
       >
         {title}
@@ -203,6 +204,7 @@ function DashboardCard({ title, value, sub }: DashboardCardProps) {
         style={{
           fontFamily: "var(--font-heading)",
           color: "var(--tr-text-primary)",
+          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.06)", // ⭐ new shadow
         }}
       >
         {value}
