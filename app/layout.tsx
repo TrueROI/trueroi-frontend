@@ -35,7 +35,7 @@ export default function RootLayout({
             className="flex flex-col"
             style={{
               // ⭐ This is your ONLY gradient
-              background: "red"
+              background: "linear-gradient(to bottom, rgb(153, 91, 211) 0%, rgb(120, 214, 238) 40%, var(--tr-bg) 100%)"
             }}
           >
 
