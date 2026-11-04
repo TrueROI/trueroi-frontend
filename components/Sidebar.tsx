@@ -24,7 +24,7 @@ export default function Sidebar() {
         overflow-hidden
       "
       style={{
-        background: "var(--tr-surface)",       // slightly darker than main bg
+        background: "transparent",       // slightly darker than main bg
         borderRight: "1px solid var(--tr-border)"
       }}
     >
