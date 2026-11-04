@@ -1,7 +1,6 @@
 "use client";
 
 import Greeting from "../../components/Greeting";
-import TopGradientBand from "../../components/TopGradientBand";
 import dynamic from "next/dynamic";
 
 // Load chart client-side only
@@ -45,10 +44,30 @@ const chartData = [
 // -----------------------------
 export default function DashboardPage() {
   return (
-    <div className="space-y-10" style={{ fontFamily: "var(--font-body)" }}>
+    <div className="relative space-y-10" style={{ fontFamily: "var(--font-body)" }}>
+
+      {/* ⭐ Gradient layer (always shows) */}
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          height: "260px",
+          background: `
+            linear-gradient(
+              to bottom,
+              rgba(255,255,255,1) 0%,
+              rgba(247,247,247,1) 40%,
+              var(--tr-bg) 100%
+            )
+          `,
+          zIndex: 0,
+        }}
+      />
 
       {/* Greeting */}
-      <div className="text-center">
+      <div className="text-center relative" style={{ zIndex: 1 }}>
         <Greeting
           merchantName="Kane"
           shopName="TrueROI Profit Guard"
@@ -56,22 +75,24 @@ export default function DashboardPage() {
         />
       </div>
 
-      {/* ⭐ Gradient band under greeting, behind KPI cards */}
-      <TopGradientBand>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <DashboardCard title="Net Profit" value="$45,678.90" sub="+20% vs yesterday" />
-          <DashboardCard title="Total Leaks Detected" value="2,405" sub="+5 new issues" />
-          <DashboardCard title="Money Lost to Leaks" value="$10,353" sub="vs yesterday" />
-          <DashboardCard title="Profit Margin" value="32%" sub="vs yesterday" />
-        </div>
-      </TopGradientBand>
+      {/* KPI Cards */}
+      <div
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative"
+        style={{ zIndex: 1 }}
+      >
+        <DashboardCard title="Net Profit" value="$45,678.90" sub="+20% vs yesterday" />
+        <DashboardCard title="Total Leaks Detected" value="2,405" sub="+5 new issues" />
+        <DashboardCard title="Money Lost to Leaks" value="$10,353" sub="vs yesterday" />
+        <DashboardCard title="Profit Margin" value="32%" sub="vs yesterday" />
+      </div>
 
       {/* Chart Section */}
       <div
-        className="rounded-xl p-8"
+        className="rounded-xl p-8 relative"
         style={{
           background: "var(--tr-surface)",
           border: "1px solid var(--tr-border)",
+          zIndex: 1,
         }}
       >
         <h3
@@ -92,10 +113,11 @@ export default function DashboardPage() {
 
       {/* Recent Profit Audits */}
       <div
-        className="rounded-xl p-8"
+        className="rounded-xl p-8 relative"
         style={{
           background: "var(--tr-surface)",
           border: "1px solid var(--tr-border)",
+          zIndex: 1,
         }}
       >
         <h3
