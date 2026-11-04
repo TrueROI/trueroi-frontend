@@ -46,25 +46,33 @@ export default function DashboardPage() {
   return (
     <div className="relative space-y-10" style={{ fontFamily: "var(--font-body)" }}>
 
-      {/* ⭐ Gradient layer (always shows) */}
+      {/* ⭐ PHYSICAL GRADIENT ELEMENT */}
       <div
         style={{
           position: "absolute",
           top: 0,
           left: 0,
           right: 0,
-          height: "260px",
-          background: `
-            linear-gradient(
-              to bottom,
-              rgba(255,255,255,1) 0%,
-              rgba(247,247,247,1) 40%,
-              var(--tr-bg) 100%
-            )
-          `,
+          height: "300px",
           zIndex: 0,
+          pointerEvents: "none",
         }}
-      />
+      >
+        <div
+          style={{
+            width: "100%",
+            height: "100%",
+            background: `
+              linear-gradient(
+                to bottom,
+                rgba(255,255,255,1) 0%,
+                rgba(247,247,247,1) 40%,
+                var(--tr-bg) 100%
+              )
+            `,
+          }}
+        />
+      </div>
 
       {/* Greeting */}
       <div className="text-center relative" style={{ zIndex: 1 }}>
