@@ -32,7 +32,7 @@ export default function RootLayout({
 
           {/* SaaS Layout Shell */}
           <div
-            className="min-h-screen flex flex-col"
+            className="flex flex-col"
             style={{
               // ⭐ This is your ONLY gradient
               background: "linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(247,247,247,1) 40%, var(--tr-bg) 100%)"

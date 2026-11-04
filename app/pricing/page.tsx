@@ -3,7 +3,7 @@
 export default function PricingPage() {
   return (
     <main
-      className="min-h-screen flex items-center justify-center"
+      className="flex items-center justify-center"
       style={{
         background: "transparent",
         color: "var(--tr-text-primary)",
