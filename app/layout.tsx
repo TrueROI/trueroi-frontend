@@ -75,7 +75,7 @@ export default function RootLayout({
                 <button
                   className="px-3 py-1 rounded-lg"
                   style={{
-                    background: "var(--tr-bg)",
+                    background: "transparent",
                     border: "1px solid var(--tr-border)",
                     color: "var(--tr-text-primary)",
                   }}

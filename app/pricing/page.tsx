@@ -5,7 +5,7 @@ export default function PricingPage() {
     <main
       className="min-h-screen flex items-center justify-center"
       style={{
-        background: "var(--tr-bg)",
+        background: "transparent",
         color: "var(--tr-text-primary)",
         fontFamily: "var(--font-body)",
       }}

@@ -243,7 +243,7 @@ export default function ProfitAuditTable() {
               }}
               onClick={() => (window.location.href = `/audit/${order.id}`)}
               onMouseEnter={(e) =>
-                (e.currentTarget.style.background = "var(--tr-bg)")
+                (e.currentTarget.style.background = "transparent")
               }
               onMouseLeave={(e) =>
                 (e.currentTarget.style.background = "transparent")
