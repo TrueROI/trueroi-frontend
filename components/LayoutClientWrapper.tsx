@@ -26,6 +26,7 @@ export default function LayoutClientWrapper({ children }: { children: React.Reac
       <main
         className="flex-1 p-8 overflow-y-auto"
         style={{
+          background: "transparent",
           fontFamily: "var(--font-body)",
         }}
       >
