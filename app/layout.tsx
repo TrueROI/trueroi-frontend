@@ -26,7 +26,7 @@ export default function RootLayout({
     >
       <body
         className="min-h-full"
-        style={{ background: "transparent" }}
+        style={{ background: "red" }}
       >
         <LayoutClientWrapper>
 
