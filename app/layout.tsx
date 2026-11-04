@@ -29,19 +29,21 @@ export default function RootLayout({
         style={{ background: "transparent" }}
       >
         <LayoutClientWrapper>
-          
+
           {/* SaaS Layout Shell */}
-          <div  className="min-h-screen flex flex-col"
-  style={{
-    background: "linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(247,247,247,1) 40%, var(--tr-bg) 100%)"
-  }}
->
+          <div
+            className="min-h-screen flex flex-col"
+            style={{
+              // ⭐ This is your ONLY gradient
+              background: "linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(247,247,247,1) 40%, var(--tr-bg) 100%)"
+            }}
+          >
 
             {/* Top Navigation */}
             <header
               className="h-14 flex items-center px-6 justify-between"
               style={{
-                background: "transparent", // header now sits ON the gradient
+                background: "transparent", // sits ON the gradient
                 borderBottom: "1px solid var(--tr-border)",
               }}
             >
@@ -83,19 +85,13 @@ export default function RootLayout({
               </div>
             </header>
 
-            {/* Main Content Area with full gradient */}
+            {/* Main Content Area */}
             <div className="flex flex-1">
               <main
                 className="flex-1 p-8"
                 style={{
-                  background: `
-                    linear-gradient(
-                      to bottom,
-                      rgb(228, 40, 40) 0%,
-                      rgb(39, 102, 238) 50%,
-                      var(--tr-bg) 100%
-                    )
-                  `,
+                  // ⭐ MUST be transparent so gradient shows
+                  background: "transparent"
                 }}
               >
                 {children}
