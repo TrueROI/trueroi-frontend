@@ -1,6 +1,7 @@
 "use client";
 
 import Greeting from "../../components/Greeting";
+import TopGradientBand from "../../components/TopGradientBand";
 import dynamic from "next/dynamic";
 
 // Load chart client-side only
@@ -10,7 +11,7 @@ const ProfitLeakChart = dynamic(
 );
 
 // -----------------------------
-// TYPES (must be above components)
+// TYPES
 // -----------------------------
 interface DashboardCardProps {
   title: string;
@@ -46,37 +47,24 @@ export default function DashboardPage() {
   return (
     <div className="space-y-10" style={{ fontFamily: "var(--font-body)" }}>
 
-      {/* ⭐ TOP GRADIENT SECTION */}
-      <div
-        style={{
-          background: `
-            linear-gradient(
-              to bottom,
-              rgba(255,255,255,1) 0%,
-              rgba(247,247,247,1) 40%,
-              var(--tr-bg) 100%
-            )
-          `,
-          paddingBottom: "40px",
-          borderBottom: "1px solid var(--tr-border)",
-        }}
-      >
-        <div className="text-center">
-          <Greeting
-            merchantName="Kane"
-            shopName="TrueROI Profit Guard"
-            lastSync="Oct 7, 2026 — 4:55 PM"
-          />
-        </div>
+      {/* Greeting */}
+      <div className="text-center">
+        <Greeting
+          merchantName="Kane"
+          shopName="TrueROI Profit Guard"
+          lastSync="Oct 7, 2026 — 4:55 PM"
+        />
       </div>
 
-      {/* KPI Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <DashboardCard title="Net Profit" value="$45,678.90" sub="+20% vs yesterday" />
-        <DashboardCard title="Total Leaks Detected" value="2,405" sub="+5 new issues" />
-        <DashboardCard title="Money Lost to Leaks" value="$10,353" sub="vs yesterday" />
-        <DashboardCard title="Profit Margin" value="32%" sub="vs yesterday" />
-      </div>
+      {/* ⭐ Gradient band under greeting, behind KPI cards */}
+      <TopGradientBand>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <DashboardCard title="Net Profit" value="$45,678.90" sub="+20% vs yesterday" />
+          <DashboardCard title="Total Leaks Detected" value="2,405" sub="+5 new issues" />
+          <DashboardCard title="Money Lost to Leaks" value="$10,353" sub="vs yesterday" />
+          <DashboardCard title="Profit Margin" value="32%" sub="vs yesterday" />
+        </div>
+      </TopGradientBand>
 
       {/* Chart Section */}
       <div
