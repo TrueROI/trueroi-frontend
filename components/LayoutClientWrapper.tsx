@@ -12,7 +12,7 @@ export default function LayoutClientWrapper({ children }: { children: React.Reac
     <div
       className="flex"
       style={{
-        background: "var(--tr-bg)",
+        background: "transparent",
         color: "var(--tr-text-primary)",
         fontFamily: "var(--font-body)",
       }}
